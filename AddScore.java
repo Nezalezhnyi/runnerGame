@@ -10,6 +10,6 @@ public class AddScore extends Interact
 {
     public AddScore()
     {
-        super(4, -1, 0, 200);
+        super(4, 1, 0, 200);
     }   
 }

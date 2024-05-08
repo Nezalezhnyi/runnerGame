@@ -15,7 +15,7 @@ public class Player extends Actor
     private int spd=5;
     public Player()
     {
-        getImage().scale(120,100);
+        getImage().scale(60,50);
     }
     public void act()
     {

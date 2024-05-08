@@ -14,7 +14,7 @@ public class Spawner extends Actor
      */
     public void act()
     {
-        int change = Greenfoot.getRandomNumber(1000);
+        int change = Greenfoot.getRandomNumber(5000);
         Interact thing = choose();
         if (change < thing.getSpawnRate())
         {

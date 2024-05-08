@@ -9,15 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RunnerWorld extends World
 {
     private Counter lives, health, time, score;
+    public boolean alive = true;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    public void act()
+    {
+        GameOver();
+    }
     public RunnerWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         prepare();
+        
     }
      
     /**
@@ -89,7 +95,7 @@ public class RunnerWorld extends World
         health.setValue(100);
         lives = new Counter("Lives: ");
         addObject(lives,55,83);
-        lives.setValue(60);
+        lives.setValue(1);
         Spawner spawner = new Spawner();
         addObject(spawner,789,8);
     }
@@ -106,6 +112,10 @@ public class RunnerWorld extends World
         {
             lives.add(-1);
             health.setValue(100);
+            if (lives.getValue() == 0)
+            {
+                alive = false; //<------------CHANAGE
+            }
         }
         if (health.getValue() > 100)
         {
@@ -113,5 +123,16 @@ public class RunnerWorld extends World
             health.setValue(health.getValue()-100);
         }
         }
+    public void GameOver()
+    {
+        if (!alive)
+        {
+        addObject(new OhNo(), getWidth()/2, getHeight()/2);
+        showText("Game Over", 14, 12);
+        int size = score.getValue(); //<------------CHANAGE
+        showText("Your score " + size, 14, 14);
+        Greenfoot.stop();
+        }
+    }
     }
 

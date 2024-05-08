@@ -10,8 +10,6 @@ public class Bomb extends Interact
 {
     public Bomb()
     {
-        super(3, 0, 100, 50);
+        super(3, -1, 1000, 500);
     }
-    
-    
 }

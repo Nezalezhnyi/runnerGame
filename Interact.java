@@ -10,7 +10,7 @@ public class Interact extends Actor
 {
     private int speed; //-3
     private int scoreChange; //+ or -
-    private int damage; //+ or incldes damage and loos of life
+    private int damage; //+ or includes damage and loos of life
     private int spawnRate;
     private boolean dead = false;
     public Interact(int sp, int sc, int dm, int sr)
